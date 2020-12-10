@@ -1,23 +1,42 @@
 <?php
+require 'functions.php';
 
-$person = [
-    'age' => 31,
-    'hair' => 'Brown',
-    'career' => 'Junior Web Developer'
+class Task
+{
+
+    public $description;
+
+    public $completed = false;
+
+
+    public function __construct($description)
+    {
+        $this->description = $description;
+    }
+
+    public function complete()
+    {
+        $this->completed = true;
+    }
+
+    public function isComplete()
+    {
+        return $this->completed;
+    }
+}
+
+//$task = new Task('Go to the store');
+
+
+$tasks = [
+    new Task('Go to the store'),
+    new Task('Do the dishes'),
+    new Task('Clean my room')
 ];
 
-$person['name'] = 'Maurice';
+//dd($tasks);
 
-unset($person['hair']);
-
-
-
-$task = [
-    'chore'             => 'Do the dishes',
-    'due'               => 'Tomorrow',
-    'assigned_to'       => 'Maurice',
-    'completed'         => true
-];
+$tasks[0]->complete();
 
 
 require 'index.view.php';
