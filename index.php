@@ -1,42 +1,8 @@
 <?php
-require 'functions.php';
 
-class Task
-{
+$database = require 'core/bootstrap.php';
 
-    public $description;
+//$uri = trim($_SERVER['REQUEST_URI'], '/');
 
-    public $completed = false;
-
-
-    public function __construct($description)
-    {
-        $this->description = $description;
-    }
-
-    public function complete()
-    {
-        $this->completed = true;
-    }
-
-    public function isComplete()
-    {
-        return $this->completed;
-    }
-}
-
-//$task = new Task('Go to the store');
-
-
-$tasks = [
-    new Task('Go to the store'),
-    new Task('Do the dishes'),
-    new Task('Clean my room')
-];
-
-//dd($tasks);
-
-$tasks[0]->complete();
-
-
-require 'index.view.php';
+require Router::load('routes.php')
+    ->direct(Request::uri());
