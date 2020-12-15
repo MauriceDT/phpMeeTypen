@@ -1,10 +1,30 @@
 <?php
 
-class Request
+//class Request
 
+//{
+//public static function uri()
+//   {
+//      return trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+//   }
+
+//  public static function method()
+//  {
+//      return $_SERVER['REQUEST_METHOD'];
+//  }
+//}
+
+// Responsible for fetching information about the current browser request:
+
+class Request
 {
     public static function uri()
     {
-        return trim($_SERVER['REQUEST_URI'], '/');
+        return trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+    }
+
+    public static function method()
+    {
+        return $_SERVER['REQUEST_METHOD'];
     }
 }
