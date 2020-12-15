@@ -1,0 +1,19 @@
+.taskComplete {
+    background-color: green;
+    color: white;
+}
+
+.taskNotComplete {
+    background-color: red;
+    color: white;
+}
+
+
+
+
+
+
+
+body {
+    background: #999;
+}
