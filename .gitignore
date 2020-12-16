@@ -1,2 +1,6 @@
+.vscode
+.DS_Store
 .env 
 config.php
+/vendor
+/node_modules
