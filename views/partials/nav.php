@@ -10,7 +10,7 @@
             <a href="/contact">Contact</a>
         </li>
         <li>
-            <a href="/about/culture">About Our Culture</a>
+            <a href="/users">Show all Users</a>
         </li>
     </ul>
 </nav>
