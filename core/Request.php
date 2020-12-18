@@ -1,20 +1,6 @@
 <?php
 
-//class Request
-
-//{
-//public static function uri()
-//   {
-//      return trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
-//   }
-
-//  public static function method()
-//  {
-//      return $_SERVER['REQUEST_METHOD'];
-//  }
-//}
-
-// Responsible for fetching information about the current browser request:
+namespace App\Core;
 
 class Request
 {
