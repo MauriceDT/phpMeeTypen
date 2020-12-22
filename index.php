@@ -1,11 +1,35 @@
 <?php
 
-require 'vendor/autoload.php';
+interface Newsletter
+{
+    public function subscribe($email);
+}
+class CampaignMonitor implements Newsletter
+{
 
-$database = require 'core/bootstrap.php';
+    public function subscribe($email)
+    {
+        die('subscribing with Campaign Monitor');
+    }
+}
 
-use App\Core\{Router, Request};
+class Drip implements Newsletter
+{
+    public function subscribe($email)
+    {
+        die('subscribing with Drip');
+    }
+}
 
+class NewsLetterSubscriptionController
+{
+    public function store(Newsletter $newsletter)
+    {
+        $email = 'joe@example.com';
+        $newsletter->subscribe($email);
+    }
+}
 
-Router::load('app/routes.php')
-    ->direct(Request::uri(), Request::method());
+$controller = new NewsLetterSubscriptionController();
+
+$controller->store(new Drip());
